@@ -10,14 +10,16 @@ export default defineConfig({
         {
           src: "src/Mermaid.vue",
           dest: "./",
+          rename: { stripBase: true },
         },
         {
           src: "src/mermaid.ts",
           dest: "./",
+          rename: { stripBase: true },
         },
       ],
     }),
-    dts(),
+    dts({ entryRoot: "src" }),
   ],
   build: {
     lib: {
